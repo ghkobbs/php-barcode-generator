@@ -20,7 +20,7 @@ class BarcodeGeneratorHTML extends BarcodeGenerator
     {
         $barcodeData = $this->getBarcodeData($code, $type);
 
-        $html = '<div style="font-size:0;position:relative;width:' . ($barcodeData['maxWidth'] * $widthFactor) . 'px;height:' . ($totalHeight) . 'px;">' . "\n";
+        $html = '<div style="font-size:14px;position:relative;margin-bottom:40px;width:' . ($barcodeData['maxWidth'] * $widthFactor) . 'px;height:' . ($totalHeight) . 'px;">' . "\n";
 
         $positionHorizontal = 0;
         foreach ($barcodeData['bars'] as $bar) {
@@ -36,7 +36,7 @@ class BarcodeGeneratorHTML extends BarcodeGenerator
             $positionHorizontal += $barWidth;
         }
 
-        $html .= '</div>' . "\n";
+        $html .= '<p style="position: absolute;top: 19px;letter-spacing: 9.5px;text-align: center; width:100%;">'.$code.'</p></div>' . "\n\n";
 
         return $html;
     }
